@@ -80,7 +80,7 @@ fn cache_reload_required(path: &str) -> Option<File> {
 /// Query nix-env for its package (or "derivation") list
 fn load_nix_pkgs() -> String {
     let output = Command::new("nix-env")
-        .args(&["-qaP"])
+        .args(&["-qaPs"])
         .output()
         .expect("Failed to query Nix database");
 
